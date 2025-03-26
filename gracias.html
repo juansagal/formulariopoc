@@ -46,6 +46,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </section>
+    <script>
+      // Recuperar los datos guardados
+      let form_phone = localStorage.getItem("form_phone");
+      let form_rut = localStorage.getItem("form_rut");
+
+      // Enviar los datos a la capa de datos de GTM
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+          event: "form_send",
+          form_phone: form_phone,
+          form_rut: form_rut
+      });
+
+      // Limpiar los datos para futuras visitas
+      localStorage.removeItem("form_phone");
+      localStorage.removeItem("form_rut");
+    </script>
 
         <!-- Footer -->
         <footer class="footer">
